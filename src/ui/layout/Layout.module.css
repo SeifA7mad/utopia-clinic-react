@@ -1,0 +1,9 @@
+.mainContent {
+    width: 90%;
+    margin: auto;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: -30rem;
+}

@@ -1,0 +1,26 @@
+.navbar {
+  width: fit-content;
+  height: fit-content;
+  float: right;
+  margin: 3rem;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar li {
+  list-style: none;
+  margin: auto 2rem;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.8rem;
+}
+
+.navbar li a:hover {
+    color: aqua;
+}

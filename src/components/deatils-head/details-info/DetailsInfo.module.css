@@ -1,0 +1,15 @@
+.detailsInfo {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+}
+
+.detailsInfo * {
+    margin: auto .5rem;
+}
+
+.clickIcon {
+    cursor: pointer;
+}

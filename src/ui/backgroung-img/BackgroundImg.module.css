@@ -1,0 +1,21 @@
+.backgroundImg {
+  width: 100%;
+  position: relative;
+  display: block;
+  height: 90vh;
+}
+
+.backgroundImg::after {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../assets/images/nav.jpg');
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.9;
+  z-index: -10;
+}
