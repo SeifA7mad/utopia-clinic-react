@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import classes from './DetailsHead.module.css';
 import DetailsInfo from './details-info/DetailsInfo';
 import SideModal from '../../ui/modals/SideModal';
-
+import ProfileSideModal from '../profile/ProfileSideModal';
 
 
 const portalContianer = document.getElementById('modals');
@@ -21,7 +21,7 @@ const DetailsHead = () => {
   };
 
   const modalContent = {
-    profile: <SideModal heading={'Profile'} onClose={toggleModalHandler} />,
+    profile: <ProfileSideModal onClose={toggleModalHandler} />,
     notifications: (
       <SideModal heading={'Notifications'} onClose={toggleModalHandler} />
     ),

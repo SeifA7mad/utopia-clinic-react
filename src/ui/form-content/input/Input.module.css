@@ -1,0 +1,16 @@
+.input {
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0);
+    margin: auto;
+    height: 1.5rem;
+    border-style: none;
+    border-bottom: solid aqua 2px;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+.input::placeholder {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 1rem;
+}
