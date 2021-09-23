@@ -1,18 +1,14 @@
 .navbar {
-  width: fit-content;
+  width: 35vh;
   height: fit-content;
-  float: right;
-  margin: 3rem;
-}
-
-.navbar ul {
+  margin: 4rem auto;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .navbar li {
   list-style: none;
-  margin: auto 2rem;
 }
 
 .navbar li a {
@@ -22,5 +18,5 @@
 }
 
 .navbar li a:hover {
-    color: aqua;
+  color: aqua;
 }

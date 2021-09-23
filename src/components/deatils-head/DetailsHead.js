@@ -5,6 +5,8 @@ import classes from './DetailsHead.module.css';
 import DetailsInfo from './details-info/DetailsInfo';
 import SideModal from '../../ui/modals/SideModal';
 
+
+
 const portalContianer = document.getElementById('modals');
 
 const DetailsHead = () => {
