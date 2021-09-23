@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import classes from './DetailsHead.module.css';
 import DetailsInfo from './details-info/DetailsInfo';
 import SideModal from '../../ui/modals/SideModal';
+
+const portalContianer = document.getElementById('modals');
 
 const DetailsHead = () => {
   const [profileModalIsShown, setProfileModalIsShown] = useState(false);
@@ -34,8 +37,8 @@ const DetailsHead = () => {
           icon='fa fa-bell-o fa-2x notification'
           onClick={toggleNotiModalHandler}
         />
-        <SideModal modalIsShown={profileModalIsShown} heading='Profile' />
-        <SideModal modalIsShown={notiModalIsShown} heading='Notification' />
+        {profileModalIsShown && createPortal(<SideModal heading='Profile' />, portalContianer)}
+        {notiModalIsShown && createPortal(<SideModal heading='Notification' />, portalContianer)}
       </div>
     </div>
   );

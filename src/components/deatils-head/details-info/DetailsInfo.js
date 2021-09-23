@@ -8,7 +8,7 @@ const DetailsInfo = (props) => {
   return (
     <div className={classes.detailsInfo}>
       <i className={classList} onClick={props.onClick} />
-      <p> {props.textInfo} </p>
+      {props.textInfo && <p> {props.textInfo} </p>}
     </div>
   );
 };
