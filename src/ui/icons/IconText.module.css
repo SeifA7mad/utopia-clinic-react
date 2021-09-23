@@ -1,4 +1,4 @@
-.detailsInfo {
+.iconText {
     display: flex;
     width: fit-content;
     align-items: center;
@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-.detailsInfo * {
+.iconText * {
     margin: auto .5rem;
 }
 

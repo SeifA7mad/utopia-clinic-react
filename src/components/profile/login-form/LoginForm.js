@@ -1,7 +1,7 @@
 import { useRef, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import {AuthContext} from '../../../store/auth-context'
+import { AuthContext } from '../../../store/auth-context';
 import Input from '../../../ui/form-content/input/Input';
 import Button from '../../../ui/form-content/button/Button';
 import ErrorMessage from '../../../ui/form-content/error-message/ErrorMessage';
@@ -9,10 +9,9 @@ import classes from './LoginForm.module.css';
 
 const validateEmpty = (value) => {
   return value.trim() !== '';
-}
+};
 
 const LoginForm = () => {
-
   const [error, setError] = useState('');
 
   const emailInputRef = useRef();
@@ -39,15 +38,13 @@ const LoginForm = () => {
       return;
     }
 
-
-
     authCtx.login();
     setError('');
   };
 
   return (
     <>
-      {!!error &&<ErrorMessage errorText={error} />}
+      {!!error && <ErrorMessage errorText={error} />}
       <form className={classes.loginForm} onSubmit={submitFormHandler}>
         <Input
           type='text'
@@ -64,8 +61,7 @@ const LoginForm = () => {
         <Button type='submit'> Login </Button>
       </form>
       <Link className={classes.signUp} to=''>
-        {' '}
-        Sign-up{' '}
+        Sign-up
       </Link>
     </>
   );
