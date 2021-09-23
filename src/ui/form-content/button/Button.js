@@ -12,7 +12,7 @@ const btnType = {
 };
 
 const Button = ({ type, children, disabled }) => (
-  <button type={btnType[type].type} className={btnType[type].class} disabled={disabled}>
+  <button type={btnType[type].type} className={`${classes.btn} ${btnType[type].class}`} disabled={disabled}>
     {children}
   </button>
 );

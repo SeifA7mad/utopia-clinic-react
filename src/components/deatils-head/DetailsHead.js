@@ -6,20 +6,23 @@ import DetailsInfo from './details-info/DetailsInfo';
 import SideModal from '../../ui/modals/SideModal';
 import ProfileSideModal from '../profile/ProfileSideModal';
 
-
 const portalContianer = document.getElementById('modals');
 
+// head component handle the activeModal state to only show one side modal profile | notification modal
 const DetailsHead = () => {
   const [activeModal, setActiveModal] = useState('');
 
   const toggleModalHandler = (modalTitle) => {
+    // if the pressed btn modalTitle == to the active modal just close it (empty the active modal) => modalContent = ''
     if (activeModal === modalTitle) {
       setActiveModal('');
       return;
     }
+    // otherwise set the activeModal with the new modalTitle (modalTitle) => modalContent['modalTitle']
     setActiveModal(modalTitle);
   };
 
+  // object that saves all the possible modal content in keys
   const modalContent = {
     profile: <ProfileSideModal onClose={toggleModalHandler} />,
     notifications: (

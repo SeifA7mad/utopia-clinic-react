@@ -2,8 +2,9 @@
     display: flex;
     width: fit-content;
     align-items: center;
-    height: 100%;
+    height: fit-content;
     font-size: 1rem;
+    margin: auto;
 }
 
 .detailsInfo * {

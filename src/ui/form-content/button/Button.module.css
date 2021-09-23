@@ -1,7 +1,22 @@
-.submitBtn {
+.btn {
+  width: 70%;
+  margin: auto;
+  height: 2rem;
+  border-radius: 2em;
+  border-style: none;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
 
+.submitBtn {
+  color: #ffffff;
+  background-color: #4eb5f1;
+}
+.submitBtn:hover {
+  background-color: #4095c6;
 }
 
 .exitBtn {
-    
 }
