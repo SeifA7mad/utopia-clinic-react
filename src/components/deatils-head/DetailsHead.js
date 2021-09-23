@@ -8,17 +8,21 @@ import SideModal from '../../ui/modals/SideModal';
 const portalContianer = document.getElementById('modals');
 
 const DetailsHead = () => {
-  const [profileModalIsShown, setProfileModalIsShown] = useState(false);
-  const [notiModalIsShown, setNotiModalIsShown] = useState(false);
+  const [activeModal, setActiveModal] = useState('');
 
-  const toggleProfileModalHandler = () => {
-    setProfileModalIsShown((prevState) => !prevState);
-    setNotiModalIsShown(false);
+  const toggleModalHandler = (modalTitle) => {
+    if (activeModal === modalTitle) {
+      setActiveModal('');
+      return;
+    }
+    setActiveModal(modalTitle);
   };
 
-  const toggleNotiModalHandler = () => {
-    setNotiModalIsShown((prevState) => !prevState);
-    setProfileModalIsShown(false);
+  const modalContent = {
+    profile: <SideModal heading={'Profile'} onClose={toggleModalHandler} />,
+    notifications: (
+      <SideModal heading={'Notifications'} onClose={toggleModalHandler} />
+    ),
   };
 
   return (
@@ -31,14 +35,14 @@ const DetailsHead = () => {
       <div className={classes.detailsBtns}>
         <DetailsInfo
           icon='fa fa-user fa-2x profile'
-          onClick={toggleProfileModalHandler}
+          onClick={() => toggleModalHandler('profile')}
         />
         <DetailsInfo
           icon='fa fa-bell-o fa-2x notification'
-          onClick={toggleNotiModalHandler}
+          onClick={() => toggleModalHandler('notifications')}
         />
-        {profileModalIsShown && createPortal(<SideModal heading='Profile' />, portalContianer)}
-        {notiModalIsShown && createPortal(<SideModal heading='Notification' />, portalContianer)}
+        {activeModal !== '' &&
+          createPortal(modalContent[activeModal], portalContianer)}
       </div>
     </div>
   );
