@@ -2,6 +2,7 @@ import { useRef, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../../store/auth-context';
+import { dummyUserData } from '../../../store/dummy-data';
 import Input from '../../../ui/form-content/input/Input';
 import Button from '../../../ui/form-content/button/Button';
 import ErrorMessage from '../../../ui/form-content/error-message/ErrorMessage';
@@ -9,11 +10,6 @@ import classes from './LoginForm.module.css';
 
 const validateEmpty = (value) => {
   return value.trim() !== '';
-};
-
-export const dummyUserData = {
-  1: { userName: 'Seif ahmad', email: 'seif@', pass: '1234' },
-  2: { userName: 'Nasser', email: 'nasser@', pass: '1234' },
 };
 
 const LoginForm = () => {
