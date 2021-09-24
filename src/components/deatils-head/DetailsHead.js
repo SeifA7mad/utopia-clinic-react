@@ -45,7 +45,9 @@ const DetailsHead = () => {
         <IconText
           icon='fa fa-bell-o fa-2x notification'
           onClick={() => toggleModalHandler('notifications')}
-        />
+        >
+          <span className={classes.notiNum}> 0 </span>
+        </IconText>
         {activeModal !== '' &&
           createPortal(modalContent[activeModal], portalContianer)}
       </div>

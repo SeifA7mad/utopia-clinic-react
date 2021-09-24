@@ -2,12 +2,13 @@ import classes from './IconText.module.css';
 
 import React from 'react';
 
-const IconText = (props) => {
-  const classList = `${props.icon} ${props.onClick ? classes.clickIcon : null}`;
+const IconText = ({icon, onClick, textInfo, children}) => {
+  const classList = `${icon} ${onClick ? classes.clickIcon : null}`;
   return (
     <div className={classes.iconText}>
-      <i className={classList} onClick={props.onClick} />
-      {props.textInfo && <p> {props.textInfo} </p>}
+      <i className={classList} onClick={onClick} />
+      {textInfo && <p> {textInfo} </p>}
+      {children}
     </div>
   );
 };

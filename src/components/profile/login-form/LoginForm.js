@@ -25,13 +25,15 @@ const LoginForm = () => {
     const emailValue = emailInputRef.current.value;
     const passValue = passInputRef.current.value;
 
+    // inputs validation
     const inputsEmpty = !validateEmpty(emailValue) || !validateEmpty(passValue);
-
     if (inputsEmpty) {
       setError('Fill the fields');
       return;
     }
 
+    // later: must add http request to the server to check email & pass => token || null
+    // now: using dummyUserData to simulate the stored data on the server
     // const userData = dummyUserData.find(user => user.email === emailValue && user.pass === passValue);
     let userId = null;
     for (const [key, value] of Object.entries(dummyUserData)) {
