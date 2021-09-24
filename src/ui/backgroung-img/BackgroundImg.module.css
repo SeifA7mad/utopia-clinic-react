@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   height: 90vh;
-  --backgd-img: ;
+  --backgd-img: url('../../assets/images/nav.jpg');
 }
 
 .backgroundImg::after {

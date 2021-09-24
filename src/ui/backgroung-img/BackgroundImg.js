@@ -1,12 +1,7 @@
 import classes from './BackgroundImg.module.css';
 
-const BackgroundImg = (props) => (
-  <div
-    className={classes.backgroundImg}
-    style={{ '--backgd-img': `` }}
-  >
-    {props.children}
-  </div>
-);
+const BackgroundImg = (props) => {
+  return <div className={classes.backgroundImg}>{props.children}</div>
+};
 
 export default BackgroundImg;
