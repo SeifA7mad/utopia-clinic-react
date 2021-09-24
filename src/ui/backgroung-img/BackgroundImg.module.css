@@ -4,13 +4,13 @@
   display: flex;
   justify-content: space-between;
   height: 90vh;
+  --backgd-img: ;
 }
 
 .backgroundImg::after {
   content: '';
   position: absolute;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
-    url('../../assets/images/nav.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), var(--backgd-img);
   background-size: cover;
   background-position: center;
   top: 0;
