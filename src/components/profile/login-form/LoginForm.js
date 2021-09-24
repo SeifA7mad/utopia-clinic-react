@@ -48,7 +48,6 @@ const LoginForm = () => {
       setError('enter a vlid email or password');
       return;
     }
-    console.log(userId);
     authCtx.login(userId);
     setError('');
   };
