@@ -2,15 +2,15 @@ import { createContext, useState } from 'react';
 
 export const AuthContext = createContext({
   isLoggedIn: false,
-  userId: '',
-  login(Id) {},
+  userId: null,
+  login(id) {},
   logout() {},
 });
 
 const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  let userId = '';
+  let userId = null;
 
   const loginHandler = (id) => {
     setIsLoggedIn(true);
@@ -19,7 +19,7 @@ const AuthContextProvider = ({ children }) => {
 
   const logoutHandler = () => {
     setIsLoggedIn(false);
-    userId = '';
+    userId = null;
   };
   const authdata = {
     isLoggedIn,
