@@ -4,19 +4,19 @@
   display: flex;
   justify-content: space-between;
   height: 90vh;
-  --backgd-img: url('../../assets/images/nav.jpg');
 }
 
 .backgroundImg::after {
   content: '';
   position: absolute;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), var(--backgd-img);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../assets/images/nav.jpg');
   background-size: cover;
   background-position: center;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.9;
+  opacity: 0.8;
   z-index: -10;
 }
