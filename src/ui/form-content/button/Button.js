@@ -11,8 +11,13 @@ const btnType = {
   },
 };
 
-const Button = ({ type, children, disabled }) => (
-  <button type={btnType[type].type} className={`${classes.btn} ${btnType[type].class}`} disabled={disabled}>
+const Button = ({ type, children, disabled, click }) => (
+  <button
+    type={btnType[type].type}
+    className={`${classes.btn} ${btnType[type].class}`}
+    disabled={disabled}
+    onClick={click}
+  >
     {children}
   </button>
 );

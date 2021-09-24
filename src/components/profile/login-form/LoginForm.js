@@ -11,6 +11,11 @@ const validateEmpty = (value) => {
   return value.trim() !== '';
 };
 
+export const dummyUserData = {
+  1: { userName: 'Seif ahmad', email: 'seif@', pass: '1234' },
+  2: { userName: 'Nasser', email: 'nasser@', pass: '1234' },
+};
+
 const LoginForm = () => {
   const [error, setError] = useState('');
 
@@ -31,14 +36,20 @@ const LoginForm = () => {
       return;
     }
 
-    console.log(passValue.length);
-
-    if (!emailValue.includes('@') || !(passValue.length > 4)) {
-      setError('Enter a valid email or password');
+    // const userData = dummyUserData.find(user => user.email === emailValue && user.pass === passValue);
+    let userId = null;
+    for (const [key, value] of Object.entries(dummyUserData)) {
+      if (value.email === emailValue && value.pass === passValue) {
+        userId = key;
+      }
+    }
+    
+    if (!userId) {
+      setError('enter a vlid email or password');
       return;
     }
 
-    authCtx.login();
+    authCtx.login(userId);
     setError('');
   };
 

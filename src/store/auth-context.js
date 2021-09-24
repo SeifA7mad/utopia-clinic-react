@@ -2,22 +2,28 @@ import { createContext, useState } from 'react';
 
 export const AuthContext = createContext({
   isLoggedIn: false,
-  login() {},
+  userId: '',
+  login(Id) {},
   logout() {},
 });
 
 const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const loginHandler = () => {
+  let userId = '';
+
+  const loginHandler = (id) => {
     setIsLoggedIn(true);
+    userId = id;
   };
 
   const logoutHandler = () => {
     setIsLoggedIn(false);
+    userId = '';
   };
   const authdata = {
     isLoggedIn,
+    userId,
     login: loginHandler,
     logout: logoutHandler,
   };
