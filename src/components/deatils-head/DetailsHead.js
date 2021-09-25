@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 
 import classes from './DetailsHead.module.css';
+
+import { AuthContext } from '../../store/auth-context';
 import IconText from '../../ui/icons/IconText';
-import SideModal from '../../ui/modals/SideModal';
+import Notifications from '../notifications/Notifications';
 import ProfileSideModal from '../profile/ProfileSideModal';
 
 const portalContianer = document.getElementById('modals');
@@ -11,7 +13,7 @@ const portalContianer = document.getElementById('modals');
 // head component handle the activeModal state to only show one side modal profile | notification modal
 const DetailsHead = () => {
   const [activeModal, setActiveModal] = useState('');
-
+  const { isLoggedIn, userToken } = useContext(AuthContext);
   const toggleModalHandler = (modalTitle) => {
     // if the pressed btn modalTitle == to the active modal just close it (empty the active modal) => modalContent = ''
     if (activeModal === modalTitle) {
@@ -25,9 +27,7 @@ const DetailsHead = () => {
   // object that saves all the possible modal content in keys
   const modalContent = {
     profile: <ProfileSideModal onClose={toggleModalHandler} />,
-    notifications: (
-      <SideModal heading={'Notifications'} onClose={toggleModalHandler} />
-    ),
+    notifications: isLoggedIn ? <Notifications onClose={toggleModalHandler} userId={userToken.id} /> : null,
   };
 
   return (
@@ -42,12 +42,12 @@ const DetailsHead = () => {
           icon='fa fa-user fa-2x profile'
           onClick={() => toggleModalHandler('profile')}
         />
-        <IconText
-          icon='fa fa-bell-o fa-2x notification'
-          onClick={() => toggleModalHandler('notifications')}
-        >
-          <span className={classes.notiNum}> 0 </span>
-        </IconText>
+        {isLoggedIn && (
+          <IconText
+            icon='fa fa-bell-o fa-2x notification'
+            onClick={() => toggleModalHandler('notifications')}
+          />
+        )}
         {activeModal !== '' &&
           createPortal(modalContent[activeModal], portalContianer)}
       </div>

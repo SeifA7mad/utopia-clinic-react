@@ -1,0 +1,21 @@
+.notificationItem {
+  height: fit-content;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  width: 90%;
+  text-align: justify;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.notificationItem:hover {
+  background-color: rgba(0, 255, 255, 0.315);
+}
+
+.notificationItem p {
+  margin: 0.4rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: snow;
+  font-weight: 300;
+}

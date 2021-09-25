@@ -21,7 +21,7 @@
     margin-right: 1rem;
 }
 
-.notiNum {
+/* .notiNum {
     position: absolute;
     width: 1.2rem;
     height: 1.2rem;
@@ -29,8 +29,9 @@
     font-weight: bold;
     bottom: -.5rem;
     right: 5px;
-    border: solid black 2px;
+    border: solid black 1px;
     border-radius: 2rem;
     background-color: rgb(2, 204, 204);
     user-select: none;
-}
+    color: snow;
+} */

@@ -35,18 +35,19 @@ const LoginForm = () => {
     // later: must add http request to the server to check email & pass => token || null
     // now: using dummyUserData to simulate the stored data on the server
     // const userData = dummyUserData.find(user => user.email === emailValue && user.pass === passValue);
-    let userId = null;
+    let userData = null;
     for (const [key, value] of Object.entries(dummyUserData)) {
       if (value.email === emailValue && value.pass === passValue) {
-        userId = key;
+        userData = {id: key, ...value};
       }
     }
 
-    if (!userId) {
+
+    if (!userData) {
       setError('enter a vlid email or password');
       return;
     }
-    authCtx.login(userId);
+    authCtx.login(userData);
     setError('');
   };
 

@@ -1,0 +1,8 @@
+.notifications {
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
