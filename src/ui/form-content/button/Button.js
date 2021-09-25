@@ -9,6 +9,10 @@ const btnType = {
     class: classes.exitBtn,
     type: 'button',
   },
+  link: {
+    class: classes.linkBtn,
+    type: 'button'
+  }
 };
 
 const Button = ({ type, children, disabled, click }) => (

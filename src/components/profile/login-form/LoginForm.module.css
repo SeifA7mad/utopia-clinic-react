@@ -13,3 +13,10 @@
 .loginForm * {
   margin: auto;
 }
+
+.loginForm button {
+  width: 70%;
+  height: 2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}

@@ -1,10 +1,17 @@
 .profileDetails {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .profileDetails * {
-    margin: auto;
+  margin: auto auto 1rem auto;
+}
+
+.profileDetails button {
+  width: 70%;
+  height: 2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
 }

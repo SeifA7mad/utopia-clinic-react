@@ -1,11 +1,7 @@
 .btn {
-  width: 70%;
-  height: 2rem;
   border-radius: 2em;
   border-style: none;
   box-sizing: border-box;
-  font-size: 1.1rem;
-  font-weight: 300;
   cursor: pointer;
 }
 
@@ -25,4 +21,19 @@
 
 .exitBtn:hover {
   background-color: red;
+}
+
+.linkBtn {
+  color: white;
+  background-color: #2d3663b4;
+}
+
+
+.linkBtn:nth-child(even) {
+  color: black;
+  background-color:rgba(64, 224, 208, 0.78) ;
+}
+
+.linkBtn:hover {
+  background-color: #6677ccb4;
 }
