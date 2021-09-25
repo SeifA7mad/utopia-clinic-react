@@ -1,9 +1,18 @@
 .mainHeading {
   text-align: center;
-  border: solid black;
 }
 
 .mainHeading h1 {
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.349);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mainHeading h1 span {
+  color: rgba(127, 255, 212, 0.9);
+}
+
+.mainHeading p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: rgba(0, 255, 255, 0.5);
 }
