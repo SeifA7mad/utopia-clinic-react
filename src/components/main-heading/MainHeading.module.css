@@ -1,0 +1,9 @@
+.mainHeading {
+  text-align: center;
+  border: solid black;
+}
+
+.mainHeading h1 {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.349);
+}

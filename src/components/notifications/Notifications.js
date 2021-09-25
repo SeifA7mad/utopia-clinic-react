@@ -27,7 +27,12 @@ const Notifications = ({ userId, onClose }) => {
 
   if (notifications.length > 0) {
     content = notifications.map((txt, index) => (
-      <NotificationItem key={index} notifiId={index} notifiTxt={txt} onRemove={onRemoveNotificationHandler} />
+      <NotificationItem
+        key={index}
+        notifiId={index}
+        notifiTxt={txt}
+        onRemove={onRemoveNotificationHandler}
+      />
     ));
   }
 
