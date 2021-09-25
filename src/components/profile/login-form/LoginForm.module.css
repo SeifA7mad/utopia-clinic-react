@@ -9,3 +9,7 @@
 .signUp {
   margin: auto;
 }
+
+.loginForm * {
+  margin: auto;
+}

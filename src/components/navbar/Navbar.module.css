@@ -20,3 +20,8 @@
 .navbar li a:hover {
   color: aqua;
 }
+
+.navbar li a.active {
+  color: aqua;
+  text-decoration: underline;
+}
