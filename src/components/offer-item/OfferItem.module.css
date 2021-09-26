@@ -1,0 +1,24 @@
+.offerItem {
+  width: 23rem;
+  height: 25rem;
+}
+
+.offerItem img {
+  width: 95%;
+  border-radius: .6rem;
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+  opacity: .8;
+}
+
+
+.offerItem p {
+  width: 95%;
+  text-align: justify;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.offerPrice {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.76);
+}
