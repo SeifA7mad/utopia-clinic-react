@@ -5,10 +5,10 @@ const OfferItem = ({ img, desc, price, onClick }) => {
   return (
     <div className={classes.offerItem}>
       <Card onClick={onClick}>
-        <img src={img} alt='Offer Image' />
+        <img src={img} />
         <p>
           {desc}
-          <span className={classes.offerPrice}> {price} </span>
+          <span className={classes.offerPrice}> {`price: ${price}$`} </span>
         </p>
       </Card>
     </div>

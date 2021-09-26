@@ -1,6 +1,7 @@
 .offerItem {
   width: 23rem;
-  height: 25rem;
+  height: fit-content;
+  margin: 1rem auto;
 }
 
 .offerItem img {
