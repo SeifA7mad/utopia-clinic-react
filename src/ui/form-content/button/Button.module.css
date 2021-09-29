@@ -4,6 +4,11 @@
   box-sizing: border-box;
   cursor: pointer;
 }
+.btn:disabled,
+.btn:disabled:hover {
+  background-color: lightslategray;
+  cursor: not-allowed;
+}
 
 .submitBtn {
   color: #ffffff;

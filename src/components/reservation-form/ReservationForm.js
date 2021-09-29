@@ -5,38 +5,37 @@ import Button from '../../ui/form-content/button/Button';
 import classes from './ReservationForm.module.css';
 import ReserveInputs from './multi-step-forms/ReserveInputs';
 import PaymentInputs from './multi-step-forms/PaymentInputs';
-// const initialState = {
-//   activeForm: 'Reservation',
-//   activeLength: 1,
-// };
 
-// const FormStateReducer = (state, action) => {
-//   if (action.type === 'NEXT') {
-//     let formLength = state.activeLength;
-//     return {
-//       activeForm: action.formName,
-//       activeLength: ++formLength,
-//     };
-//   }
+// funtion: to validate if the input value is empty or not
+const validateForEmpty = (inputValue) => {
+  return {
+    inputValueIsValid: inputValue.trim() !== '',
+    error: 'Info Required',
+  };
+};
 
-//   if (action.type === 'PERVIOUS') {
-//     let formLength = state.activeLength;
-//     return {
-//       activeForm: action.formName,
-//       activeLength: --formLength,
-//     };
-//   }
-// };
-
+// component: multi-step form with progressbar
 const ReservationForm = () => {
-  //   const [fromState, dispatch] = useReducer(FormStateReducer, initialState);
+  const clinicInput = UseInput(validateForEmpty);
+  const symtomsInput = UseInput(validateForEmpty);
+  const infoInput = UseInput(validateForEmpty);
+  // overall form validaty to know if the user can submit or not
+  const formValidaty =
+    !clinicInput.inputValueIsValid || !symtomsInput.inputValueIsValid;
+
+  // map for the different forms in the multi-step form
   const formContent = new Map([
-    ['reservation', <ReserveInputs />],
+    [
+      'reservation',
+      <ReserveInputs inputObj={{ clinicInput, symtomsInput, infoInput }} />,
+    ],
     ['payment', <PaymentInputs />],
   ]);
-  
+
+  // state: to handle the forms has been visted
   const [activeLength, setActiveLength] = useState(1);
 
+  // array for the diff text & icons in the progressbar
   const progressContent = [
     { text: 'Reservation', icon: 'fa fa-handshake-o' },
     {
@@ -57,11 +56,11 @@ const ReservationForm = () => {
     event.preventDefault();
   };
 
-  const button =
+  const submitButton =
     activeLength === progressContent.length ? (
       <Button type='submit'> Reserve </Button>
     ) : (
-      <Button type='link' click={onNextHandler}>
+      <Button type='link' disabled={formValidaty} click={onNextHandler}>
         Next
       </Button>
     );
@@ -82,7 +81,7 @@ const ReservationForm = () => {
               Previous
             </Button>
           )}
-          {button}
+          {submitButton}
         </div>
       </form>
     </>
