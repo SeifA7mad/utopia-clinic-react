@@ -10,6 +10,7 @@
     right: 2rem;
     top: 2rem;
     z-index: 101;
+    position: fixed;
 }
 
 .sideModal h2 {

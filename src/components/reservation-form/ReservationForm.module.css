@@ -1,0 +1,37 @@
+.reservationForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 3rem;
+  background-color: rgba(211, 211, 211, 0.829);
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+}
+
+.reservationForm .inputs {
+    width: 95%;
+    max-height: 18rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.reservationForm input {
+    width: 30%;
+    margin-bottom: 2.5rem;
+}
+
+.reservationForm .buttons {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.reservationForm button {
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    margin: auto;
+}
+
+

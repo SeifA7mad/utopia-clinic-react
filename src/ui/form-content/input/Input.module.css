@@ -4,7 +4,7 @@
     height: 1.5rem;
     border-style: none;
     border-bottom: solid aqua 2px;
-    color: whitesmoke;
+    color: black;
     font-size: 1rem;
 }
 
@@ -12,4 +12,11 @@
     color: whitesmoke;
     font-weight: bold;
     font-size: 1rem;
+}
+
+.label {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: black;
+    width: 30%;
 }

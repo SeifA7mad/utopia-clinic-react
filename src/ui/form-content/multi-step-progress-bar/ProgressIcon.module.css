@@ -3,6 +3,7 @@
     width: 50%;
     text-align: center;
     position: relative;
+    left: -20px;
 }
 
 .progressIcon::after {
@@ -10,6 +11,7 @@
     width: 100%;
     height: 3px;
     background-color: lightgray;
+    animation: progressColorEmpty 2s;
     position: absolute;
     left: 0;
     top: 17px;
@@ -18,6 +20,7 @@
 
 .progressIcon span {
   background-color: lightgrey;
+  animation: progressColorEmpty 2s forwards;
   color: #ffffff;
   border-radius: 50%;
   padding: 1.5rem;
@@ -28,11 +31,17 @@
 
 .progressIcon.active::after,
 .progressIcon.active span{
-  animation: progressColor 2s forwards;
+  animation: progressColorFill 2s forwards;
 }
 
-@keyframes progressColor {
+@keyframes progressColorFill {
     0% { background-color: lightgrey; width: 0%;}
     50% { background-color: rgb(102, 248, 248); width: 50%;}
     100% { background-color: aqua; width: 100%;}
+}
+
+@keyframes progressColorEmpty {
+    0% { background-color: aqua; width: 100%;}
+    50% { background-color: rgb(102, 248, 248); width: 50%;}
+    100% { background-color: lightgrey; width: 100%;}
 }

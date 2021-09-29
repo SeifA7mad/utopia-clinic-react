@@ -5,7 +5,7 @@ const MultiStepProgressBar = ({ progressContent, activeLength }) => {
   const content = (
     <ul className={classes.progressBar}>
       {progressContent.map((el, index) => (
-        <ProgressIcon text={el.text} icon={el.icon} active={index + 1 <= activeLength} />
+        <ProgressIcon key={index} text={el.text} icon={el.icon} active={index + 1 <= activeLength} />
       ))}
     </ul>
   );
