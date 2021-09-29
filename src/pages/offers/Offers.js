@@ -1,4 +1,3 @@
-import classes from './Offers.module.css';
 
 import OfferList from '../../components/offer-item/OfferList';
 import MainHeading from '../../components/main-heading/MainHeading';

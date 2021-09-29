@@ -15,7 +15,7 @@ const OfferList = () => {
   }, []);
 
   const onClickOfferHandler = () => {
-    // history.push('/reservation');
+    history.push('/reservation');
   };
 
   let content = <ErrorMessage errorText='No Offers today :(' />;
@@ -23,6 +23,7 @@ const OfferList = () => {
     content = offerList.map((offer) => (
       <OfferItem
         key={offer.id}
+        id={offer.id}
         desc={offer.desc}
         price={offer.price}
         img={offer.img}

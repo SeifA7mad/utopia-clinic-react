@@ -12,7 +12,7 @@ const Home = () => {
         split={true}
       />
       <div className={classes.btns}>
-        <Link to=''>
+        <Link to='/reservation'>
           <Button type='link'> Clinic Reservation </Button>
         </Link>
         <Link to=''>

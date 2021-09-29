@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Offers from './pages/offers/Offers';
+import Reservation from './pages/reservation/Reservation';
 import Layout from './ui/layout/Layout';
 
 const App = () => {
@@ -9,6 +10,9 @@ const App = () => {
       <Switch>
         <Route path='/offers'>
           <Offers />
+        </Route>
+        <Route path='/reservation'>
+          <Reservation />
         </Route>
         <Route path='/' exact>
           <Home />

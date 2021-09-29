@@ -1,7 +1,5 @@
 import classes from './IconText.module.css';
 
-import React from 'react';
-
 const IconText = ({icon, onClick, textInfo}) => {
   const classList = `${icon} ${onClick ? classes.clickIcon : null}`;
   return (
