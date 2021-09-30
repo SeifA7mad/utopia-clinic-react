@@ -7,30 +7,48 @@ import ReserveInputs from './multi-step-forms/ReserveInputs';
 import PaymentInputs from './multi-step-forms/PaymentInputs';
 
 // funtion: to validate if the input value is empty or not
-const validateForEmpty = (inputValue) => {
+const validateInputs = (inputValue, action = null) => {
+  const notEmpty = inputValue.trim() !== '';
+
+  if (action === 'date') {
+    const inputDate = new Date(inputValue);
+    const curDate = new Date().toISOString.slice(0, 10);
+    if (curDate > inputDate) {
+      return {
+        inputValueIsValid: false,
+        error: 'Your Credit Card Expired',
+      };
+    }
+  }
+
   return {
-    inputValueIsValid: inputValue.trim() !== '',
+    inputValueIsValid: notEmpty,
     error: 'Info Required',
   };
 };
 
 // component: multi-step form with progressbar
 const ReservationForm = () => {
-  const clinicInput = UseInput(validateForEmpty);
-  const symtomsInput = UseInput(validateForEmpty);
-  const infoInput = UseInput(validateForEmpty);
+  // inputs for the reservation form
+  const clinicInput = UseInput(validateInputs);
+  const symtomsInput = UseInput(validateInputs);
+  const infoInput = UseInput(validateInputs);
+  // inputs for the payment form
+  const nameInput = UseInput(validateInputs);
+  const dateInput = UseInput(validateInputs);
+  const cvvInput = UseInput(validateInputs);
   // overall form validaty to know if the user can submit or not
   const formValidaty =
-    !clinicInput.inputValueIsValid || !symtomsInput.inputValueIsValid;
+    !clinicInput.inputValueIsValid ||
+    !symtomsInput.inputValueIsValid ||
+    !nameInput.inputValueIsValid ||
+    !dateInput.inputValueIsValid;
 
   // map for the different forms in the multi-step form
-  const formContent = new Map([
-    [
-      'reservation',
-      <ReserveInputs inputObj={{ clinicInput, symtomsInput, infoInput }} />,
-    ],
-    ['payment', <PaymentInputs />],
-  ]);
+  const formContent = [
+    <ReserveInputs inputObj={{ clinicInput, symtomsInput, infoInput }} />,
+    <PaymentInputs inputObj={{ nameInput, dateInput, cvvInput }} />,
+  ];
 
   // state: to handle the forms has been visted
   const [activeLength, setActiveLength] = useState(1);
@@ -54,16 +72,9 @@ const ReservationForm = () => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
+    // later: send http request to the backend to save the reservations data to the DB
+    // Redirect the user to the recipet
   };
-
-  const submitButton =
-    activeLength === progressContent.length ? (
-      <Button type='submit'> Reserve </Button>
-    ) : (
-      <Button type='link' disabled={formValidaty} click={onNextHandler}>
-        Next
-      </Button>
-    );
 
   return (
     <>
@@ -72,16 +83,21 @@ const ReservationForm = () => {
         activeLength={activeLength}
       />
       <form className={classes.reservationForm} onSubmit={onSubmitHandler}>
-        <div className={classes.inputs}>
-          {formContent.get(Array.from(formContent.keys())[activeLength - 1])}
-        </div>
+        <div className={classes.inputs}>{formContent[activeLength - 1]}</div>
         <div className={classes.buttons}>
           {activeLength > 1 && (
             <Button type='link' click={onPreviousHandler}>
               Previous
             </Button>
           )}
-          {submitButton}
+          {activeLength === progressContent.length && (
+            <Button type='submit' disabled={formValidaty}> Reserve </Button>
+          )}
+          {activeLength !== progressContent.length && (
+            <Button type='link' click={onNextHandler}>
+              Next
+            </Button>
+          )}
         </div>
       </form>
     </>
