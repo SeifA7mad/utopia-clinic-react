@@ -1,0 +1,73 @@
+.footerContent {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #2d3663;
+}
+
+.footerContent .topContent {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1rem auto;
+  padding-bottom: 1rem;
+  border-bottom: dashed rgba(245, 245, 245, 0.658) 2px;
+}
+
+.footerContent .topContent .social {
+  display: flex;
+  align-self: center;
+  color: whitesmoke;
+  width: 45%;
+  height: 45%;
+  font-size: 1.5rem;
+}
+
+.footerContent .topContent .social div {
+    margin: auto;
+}
+
+.footerContent .topContent .social i {
+  font-size: 1.4rem;
+}
+
+.footerContent .bottomContent {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+
+.footerContent .bottomContent .bottomContent1,
+.footerContent .bottomContent .bottomContent2,
+.footerContent .bottomContent .bottomContent3 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footerContent .bottomContent .bottomContent1 h1,
+.footerContent .bottomContent .bottomContent2 h1,
+.footerContent .bottomContent .bottomContent3 h1 {
+    color: rgba(127, 255, 212, 0.9);
+}
+
+
+.footerContent .bottomContent .bottomContent1 p,
+.footerContent .bottomContent .bottomContent1 i {
+    text-align: justify;
+    color: whitesmoke;
+    line-height: 2rem;
+    font-size: 1rem;
+}
+
+.footerContent .bottomContent .bottomContent2 a {
+    color: whitesmoke;
+    font-size: 1.3rem;
+}
+
+
