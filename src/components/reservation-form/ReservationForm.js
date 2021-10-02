@@ -10,9 +10,9 @@ import PaymentInputs from './multi-step-forms/PaymentInputs';
 const validateInputs = (inputValue, action = null) => {
   const notEmpty = inputValue.trim() !== '';
 
-  if (action === 'date') {
-    const inputDate = new Date(inputValue);
-    const curDate = new Date().toISOString.slice(0, 10);
+  if (action === 'date' && notEmpty) {
+    const inputDate = new Date(inputValue).toISOString().slice(0, 10);
+    const curDate = new Date().toISOString().slice(0, 10);
     if (curDate > inputDate) {
       return {
         inputValueIsValid: false,
@@ -35,7 +35,7 @@ const ReservationForm = () => {
   const infoInput = UseInput(validateInputs);
   // inputs for the payment form
   const nameInput = UseInput(validateInputs);
-  const dateInput = UseInput(validateInputs);
+  const dateInput = UseInput(validateInputs, 'date');
   const cvvInput = UseInput(validateInputs);
   // overall form validaty to know if the user can submit or not
   const formValidaty =
