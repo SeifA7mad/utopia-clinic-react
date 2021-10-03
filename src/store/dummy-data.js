@@ -2,8 +2,9 @@ import offerImage from '../assets/images/dental.png';
 
 // Users
 export const dummyUserData = {
-  1: { userName: 'Seif ahmad', email: 'seif@', pass: '1234' },
-  2: { userName: 'Nasser', email: 'nasser@', pass: '1234' },
+  1: { userName: 'Seif ahmad', email: 'seif@', pass: '1234', type: 'admin' },
+  2: { userName: 'Nasser', email: 'nasser@', pass: '1234', type: 'doctor' },
+  3: { userName: 'Ahmad Sorour', email: 'sorour@', pass: '1234', type: 'user' },
 };
 
 // Notifications fo specifc User
