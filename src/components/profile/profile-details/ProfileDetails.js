@@ -9,7 +9,7 @@ const ProfileDetails = () => {
     return (
         <div className={classes.profileDetails}>
             <h3> {userToken.userName} </h3>
-            {userToken.type !== 'user' && <Link to='/dashboard'> Dashboard </Link>}
+            {userToken.type !== 'user' && <Link to='/dashboard' replace> Dashboard </Link>}
             <Button click={logout} type='exit'> Logout </Button>
         </div>
     )
