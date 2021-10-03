@@ -7,10 +7,3 @@
     flex-direction: column;
     top: -38rem;
 }
-
-.dashboardContent {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-}

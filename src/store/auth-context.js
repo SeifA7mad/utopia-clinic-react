@@ -7,7 +7,7 @@ export const AuthContext = createContext({
   logout() {},
 });
 
-let logoutTimer = null;
+// let logoutTimer = null;
 
 // const calculateRamainingTime = (expireTime) => {
 //   const currentTime = new Date().getTime();
@@ -27,7 +27,7 @@ const AuthContextProvider = ({ children }) => {
    const logoutHandler = () => {
      localStorage.removeItem('userToken');
      setToken(null);
-     clearTimeout(logoutTimer);
+    //  clearTimeout(logoutTimer);
    };
 
   const loginHandler = (token) => {
@@ -35,8 +35,8 @@ const AuthContextProvider = ({ children }) => {
     localStorage.setItem('userToken', tokenJson);
     setToken(token);
 
-    // const remainingTime = calculateRamainingTime('10000');
-    logoutTimer =  setTimeout(logoutHandler, 20000);
+    // const remainingTime = calculateRamainingTime(expireTime);
+    // logoutTimer =  setTimeout(logoutHandler, 20000);
   };
 
 

@@ -12,10 +12,6 @@ const Layout = ({ children }) => {
 
   const isDashboard = pathname.includes('/dashboard');
 
-  const mainClasses = !isDashboard
-    ? classes.mainContent
-    : classes.dashboardContent;
-
   return (
     <>
       <header>
@@ -27,7 +23,8 @@ const Layout = ({ children }) => {
         )}
       </header>
       <main>
-        <div className={mainClasses}>{children}</div>
+        {!isDashboard && <div className={classes.mainContent}>{children}</div>}
+        {isDashboard && children}
       </main>
       <footer>
         <Footer />
