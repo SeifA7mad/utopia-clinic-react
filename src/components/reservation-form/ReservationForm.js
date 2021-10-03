@@ -73,6 +73,10 @@ const ReservationForm = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     // later: send http request to the backend to save the reservations data to the DB
+    if (!formValidaty) {
+      return;
+    }
+    // send the POST http request using fetch....
     // Redirect the user to the recipet
   };
 
