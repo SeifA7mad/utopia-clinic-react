@@ -6,3 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.error {
+    margin: auto;
+}

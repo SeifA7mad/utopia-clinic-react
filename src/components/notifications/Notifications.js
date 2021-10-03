@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+
 import { dummyNotificationData } from '../../store/dummy-data';
 import ErrorMessage from '../../ui/form-content/error-message/ErrorMessage';
 import SideModal from '../../ui/modals/SideModal';
 import NotificationItem from './NotificationItem';
+
 import classes from './Notifications.module.css';
 
 const Notifications = ({ userId, onClose }) => {
@@ -23,7 +25,7 @@ const Notifications = ({ userId, onClose }) => {
     setNotifications(filteredNotifications);
   };
 
-  let content = <ErrorMessage errorText='no notifications' />;
+  let content = <ErrorMessage className={classes.error} errorText='no notifications' />;
 
   if (notifications.length > 0) {
     content = notifications.map((txt, index) => (

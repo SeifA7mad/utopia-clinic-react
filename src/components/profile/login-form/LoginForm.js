@@ -53,7 +53,7 @@ const LoginForm = () => {
 
   return (
     <>
-      {!!error && <ErrorMessage errorText={error} />}
+      {!!error && <ErrorMessage className={classes.error} errorText={error} />}
       <form className={classes.loginForm} onSubmit={submitFormHandler}>
         <Input
           type='text'
