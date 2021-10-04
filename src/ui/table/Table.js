@@ -1,12 +1,22 @@
 import classes from './Table.module.css';
 
-const Table = ({tableContent}) => {
-    const tableHead = <tr> {tableContent.map((key) => <th> </th>)} </tr>;
-    return (
-        <table>
-            
-        </table>
-    )
-}
+const Table = ({ tableContent }) => {
 
-export default Table
+//   if (tableContent !== null) {
+//     for (const [id, value] of Object.entries(tableContent)) {
+//       for (const [key, obj] of Object.entries(value)) {
+//         if (tableHead !== null) {
+
+//         }
+//       }
+//     }
+//   }
+
+  return (
+    <table>
+      <thead></thead>
+    </table>
+  );
+};
+
+export default Table;
