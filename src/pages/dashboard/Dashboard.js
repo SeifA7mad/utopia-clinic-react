@@ -5,11 +5,12 @@ import Table from '../../ui/table/Table';
 import classes from './Dashboard.module.css';
 import { dummyUserData } from '../../store/dummy-data';
 
+const tableHead = ['User Name', 'User Email','User Type'];
+
 const Dashboard = () => {
     return (
         <div className={classes.dashboard}>
             <SideNavbar />
-            <DashboardCard headerTxt='Archives'> <Table tableContent={dummyUserData} /> </DashboardCard>
         </div>
     )
 }

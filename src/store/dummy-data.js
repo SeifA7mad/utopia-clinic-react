@@ -7,6 +7,7 @@ export const dummyUserData = {
   3: { userName: 'Ahmad Sorour', email: 'sorour@', pass: '1234', type: 'user' },
 };
 
+
 // Notifications fo specifc User
 export const dummyNotificationData = {
   1: [
