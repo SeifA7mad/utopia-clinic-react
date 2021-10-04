@@ -1,0 +1,16 @@
+.dashboardCard {
+    border: solid grey 2px;
+    border-radius: 1.4rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.712);
+    background-color: whitesmoke;
+    width: 65%;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboardCard h2 {
+    font-style: italic;
+}

@@ -6,5 +6,6 @@
     top: 2rem;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(177, 196, 197);
+    /* background-color: rgba(71, 71, 71, 0.363); */
+    background-color: rgba(176, 196, 222, 0.363);
 }
