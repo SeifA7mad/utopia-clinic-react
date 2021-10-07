@@ -9,13 +9,14 @@ const Table = ({ tableHeadData, tableBodyData, ignoreData }) => {
       // inner loop to loop on every key map
       let rowData = [];
       for (let dataValue in tableBodyData[dataKey]) {
-        if (!ignoreData.includes(dataValue)) {
-          rowData.push(
-            <td key={`${dataValue}${dataKey}`}>
-              {tableBodyData[dataKey][dataValue]}
-            </td>
-          );
+        if (ignoreData && ignoreData.includes(dataValue)) {
+          continue;
         }
+        rowData.push(
+          <td key={`${dataValue}${dataKey}`}>
+            {tableBodyData[dataKey][dataValue]}
+          </td>
+        );
       }
       tableBody.push(<tr key={dataKey}>{rowData}</tr>);
     }

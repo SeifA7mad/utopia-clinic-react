@@ -2,12 +2,14 @@ import { Switch, Route } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../store/auth-context';
 
+import Archives from './archives/Archives';
+
 const pathname = '/dashboard';
 const routes = {
   admin: (
     <>
       <Route path={`${pathname}/reports`}> </Route>
-      <Route path={`${pathname}/archives`}></Route>
+      <Route path={`${pathname}/archives`}> <Archives /></Route>
     </>
   ),
   doctor: (

@@ -1,0 +1,17 @@
+.archivesBtns {
+    display: flex;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+.archivesBtns button {
+    margin: 0 .5rem;
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+.archivesBtns button.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
