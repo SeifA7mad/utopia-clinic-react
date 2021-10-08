@@ -4,7 +4,8 @@
     box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.712);
     background-color: whitesmoke;
     width: 65%;
-    margin: auto;
+    height: fit-content;
+    margin: 2rem auto;
     padding: 1rem;
     display: flex;
     flex-direction: column;

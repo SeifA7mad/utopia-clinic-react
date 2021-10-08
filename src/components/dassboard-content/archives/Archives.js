@@ -9,14 +9,16 @@ import classes from './Archives.module.css';
 
 const tableData = {
   users: {
-    tableHead: ['User Name', 'Email', 'Type'],
+    tableHead: ['ID',' User Name', 'Email', 'Type'],
     tableBody: dummyUserData,
     ignoredData: ['pass'],
+    dragable: false
   },
   offers: {
     tableHead: ['ID', 'Decsription', 'price'],
     tableBody: offersData,
     ignoredData: ['img'],
+    dragable: true
   },
 };
 
@@ -53,6 +55,7 @@ const Archives = () => {
           tableHeadData={tableData[tableDataOf].tableHead}
           tableBodyData={tableData[tableDataOf].tableBody}
           ignoreData={tableData[tableDataOf].ignoredData}
+          dragable={tableData[tableDataOf].dragable}
         />
       )}
     </DashboardCard>

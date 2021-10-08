@@ -1,26 +1,36 @@
 import classes from './Table.module.css';
 
-const Table = ({ tableHeadData, tableBodyData, ignoreData }) => {
+const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable }) => {
+  let tableBodyDataTrans = [];
+
   let tableBody = [];
 
-  if (tableBodyData !== null) {
-    // outer loop to loop on the whole map keys
+  if (tableBodyData) {
     for (let dataKey in tableBodyData) {
-      // inner loop to loop on every key map
-      let rowData = [];
-      for (let dataValue in tableBodyData[dataKey]) {
-        if (ignoreData && ignoreData.includes(dataValue)) {
-          continue;
-        }
-        rowData.push(
-          <td key={`${dataValue}${dataKey}`}>
-            {tableBodyData[dataKey][dataValue]}
-          </td>
-        );
-      }
-      tableBody.push(<tr key={dataKey}>{rowData}</tr>);
+      tableBodyDataTrans.push({ id: +dataKey, ...tableBodyData[dataKey] });
     }
   }
+
+  if (tableBodyDataTrans.length > 0) {
+    let rowOfData = null;
+    tableBodyDataTrans.forEach((dataObj) => {
+      rowOfData = [];
+      for (let dataKey in dataObj) {
+        if (ignoreData && ignoreData.includes(dataKey)) {
+          continue;
+        }
+        rowOfData.push(
+          <td key={`${dataObj.id}_${dataObj[dataKey]}`}>{dataObj[dataKey]}</td>
+        );
+      }
+      tableBody.push(
+        <tr draggable={dragable} key={dataObj.id}>
+          {rowOfData}
+        </tr>
+      );
+    });
+  }
+
 
   const tableHead = tableHeadData.map((head, index) => (
     <th key={index}> {head} </th>
@@ -31,7 +41,7 @@ const Table = ({ tableHeadData, tableBodyData, ignoreData }) => {
       <thead>
         <tr>{tableHead}</tr>
       </thead>
-      <tbody>{tableBody}</tbody>
+      <tbody className={dragable ? classes.dragable : null}>{tableBody}</tbody>
     </table>
   );
 };

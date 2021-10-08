@@ -9,6 +9,7 @@
 .table th {
   border: 1px solid #ddd;
   padding: 8px;
+  user-select: none;
 }
 
 .table tr:nth-child(even){background-color: rgba(211, 211, 211, 0.328);}
@@ -21,4 +22,8 @@
   text-align: left;
   background-color: lightsteelblue;
   color: white;
+}
+
+.dragable tr {
+  cursor: grab;
 }
