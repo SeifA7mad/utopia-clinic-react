@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import UseTable from '../../../hooks/use-table';
 import DashboardCard from '../../../ui/card/dashboard-card/DashboardCard';
 import Table from '../../../ui/table/Table';
 import Button from '../../../ui/form-content/button/Button';
@@ -7,55 +6,57 @@ import { dummyUserData, offersData } from '../../../store/dummy-data';
 
 import classes from './Archives.module.css';
 
-const tableData = {
-  users: {
-    tableHead: ['ID',' User Name', 'Email', 'Type'],
-    tableBody: dummyUserData,
-    ignoredData: ['pass'],
-    dragable: false
-  },
-  offers: {
-    tableHead: ['ID', 'Decsription', 'price'],
-    tableBody: offersData,
-    ignoredData: ['img'],
-    dragable: true
-  },
-};
 
 const Archives = () => {
-  const [tableDataOf, setTableDataOf] = useState(null);
+  const { tableData, activeTableName, onChangeTableData } = UseTable();
 
   const onUserClickedHandler = () => {
-    setTableDataOf('users');
+    onChangeTableData(dummyUserData, 'users');
   };
 
   const onOfferClickedHandler = () => {
-    setTableDataOf('offers');
+    onChangeTableData(offersData, 'offers');
   };
+
+  const tableContent = {
+    users: {
+      tableHead: ['ID', ' User Name', 'Email', 'Type'],
+      tableBody: activeTableName === 'users' ? tableData : null,
+      ignoredData: ['pass'],
+      dragable: false,
+    },
+    offers: {
+      tableHead: ['ID', 'Decsription', 'price'],
+      tableBody: activeTableName === 'offers' ? tableData : null,
+      ignoredData: ['img'],
+      dragable: true,
+    },
+  };
+
   return (
     <DashboardCard headerTxt='Archives'>
       <div className={classes.archivesBtns}>
         <Button
           type='link'
           click={onUserClickedHandler}
-          activeClass={tableDataOf === 'users' ? classes.active : null}
+          activeClass={activeTableName === 'users' ? classes.active : null}
         >
           Users
         </Button>
         <Button
           type='link'
           click={onOfferClickedHandler}
-          activeClass={tableDataOf === 'offers' ? classes.active : null}
+          activeClass={activeTableName === 'offers' ? classes.active : null}
         >
           Offers
         </Button>
       </div>
-      {tableDataOf && (
+      {tableData && (
         <Table
-          tableHeadData={tableData[tableDataOf].tableHead}
-          tableBodyData={tableData[tableDataOf].tableBody}
-          ignoreData={tableData[tableDataOf].ignoredData}
-          dragable={tableData[tableDataOf].dragable}
+          tableHeadData={tableContent[activeTableName].tableHead}
+          tableBodyData={tableContent[activeTableName].tableBody}
+          ignoreData={tableContent[activeTableName].ignoredData}
+          dragable={tableContent[activeTableName].dragable}
         />
       )}
     </DashboardCard>

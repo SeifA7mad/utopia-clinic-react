@@ -1,15 +1,16 @@
 import classes from './Table.module.css';
 
 const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable }) => {
+  
   let tableBodyDataTrans = [];
-
-  let tableBody = [];
-
+  
   if (tableBodyData) {
     for (let dataKey in tableBodyData) {
       tableBodyDataTrans.push({ id: +dataKey, ...tableBodyData[dataKey] });
     }
   }
+
+  let tableBody = [];
 
   if (tableBodyDataTrans.length > 0) {
     let rowOfData = null;
@@ -30,7 +31,6 @@ const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable }) => {
       );
     });
   }
-
 
   const tableHead = tableHeadData.map((head, index) => (
     <th key={index}> {head} </th>
