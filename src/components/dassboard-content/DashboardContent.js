@@ -6,18 +6,14 @@ import Archives from './archives/Archives';
 
 const pathname = '/dashboard';
 const routes = {
-  admin: (
-    <>
-      <Route path={`${pathname}/reports`}> </Route>
-      <Route path={`${pathname}/archives`}> <Archives /></Route>
-    </>
-  ),
-  doctor: (
-    <>
-      <Route path={`${pathname}/tasks`}></Route>
-      <Route path={`${pathname}/questions`}></Route>
-    </>
-  ),
+  admin: [
+      <Route path={`${pathname}/reports`} key={`${pathname}/reports`}> </Route>,
+      <Route path={`${pathname}/archives`} key={`${pathname}/archives`}> <Archives /></Route>
+  ],
+  doctor: [
+      <Route path={`${pathname}/tasks`} key={`${pathname}/tasks`}></Route>,
+      <Route path={`${pathname}/questions`} key={`${pathname}/questions`}></Route>
+  ],
   user: null
 };
 
