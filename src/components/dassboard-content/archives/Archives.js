@@ -62,7 +62,7 @@ const Archives = () => {
           Offers
         </Button>
       </div>
-      {tableData && (
+      {!!activeTableName && (
         <Table
           tableHeadData={tableContent[activeTableName].tableHead}
           tableBodyData={tableContent[activeTableName].tableBody}
@@ -74,7 +74,7 @@ const Archives = () => {
         />
       )}
 
-      {tableContent[activeTableName].dragable && (
+      {!!activeTableName && tableContent[activeTableName].dragable && (
         <div
           onDragOver={(event) => {
             event.preventDefault();
