@@ -1,17 +1,49 @@
 .archivesBtns {
-    display: flex;
-    width: 50%;
-    margin-bottom: 1rem;
+  display: flex;
+  width: 50%;
+  margin-bottom: 1rem;
 }
 
 .archivesBtns button {
-    margin: 0 .5rem;
-    width: 5rem;
-    height: 1.5rem;
-    font-size: 1rem;
+  margin: 0 0.5rem;
+  width: 5rem;
+  height: 1.5rem;
+  font-size: 1rem;
 }
 
 .archivesBtns button.active {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.onDrop {
+  color: red;
+  animation: shake-animation 4.5s forwards;
+}
+
+@keyframes shake-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  1.78571% {
+    transform: rotate(10deg);
+  }
+  3.57143% {
+    transform: rotate(0);
+  }
+  5.35714% {
+    transform: rotate(-10deg);
+  }
+  7.14286% {
+    transform: rotate(10deg);
+  }
+  8.92857% {
+    transform: rotate(-10deg);
+  }
+  10.71429% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

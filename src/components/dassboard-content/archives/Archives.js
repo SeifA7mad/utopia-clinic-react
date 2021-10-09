@@ -6,7 +6,13 @@ import Button from '../../../ui/form-content/button/Button';
 import { dummyUserData, offersData } from '../../../store/dummy-data';
 
 import classes from './Archives.module.css';
-import IconText from '../../../ui/icons/IconText';
+import DroppableIcon from '../../../ui/icons/DroppableIcon';
+
+const userDataTransform = [];
+
+for (let dataKey in dummyUserData) {
+  userDataTransform.push({ id: +dataKey, ...dummyUserData[dataKey] });
+}
 
 const Archives = () => {
   const { tableData, activeTableName, onChangeTableData, onDeleteTableData } =
@@ -14,7 +20,7 @@ const Archives = () => {
 
   const onUserClickedHandler = () => {
     //later: send http request to get the users data
-    onChangeTableData(dummyUserData, 'users');
+    onChangeTableData(userDataTransform, 'users');
   };
 
   const onOfferClickedHandler = () => {
@@ -38,13 +44,12 @@ const Archives = () => {
   };
 
   const onDragStart = (event, id) => {
-    //later: send http request to remove the data 
     event.dataTransfer.setData('id', id);
   };
 
-  const onItemRemove = (event) => {
-    const idToDelete = event.dataTransfer.getData('id');
-    onDeleteTableData(+idToDelete);
+  const onItemRemove = (id) => {
+    //later: send http request to remove the data
+    onDeleteTableData(id);
   };
 
   return (
@@ -78,14 +83,12 @@ const Archives = () => {
       )}
 
       {!!activeTableName && tableContent[activeTableName].dragable && (
-        <div
-          onDragOver={(event) => {
-            event.preventDefault();
-          }}
-          onDrop={onItemRemove}
-        >
-          <IconText icon='fa fa-trash fa-3x' />
-        </div>
+        <DroppableIcon
+          icon='fa fa-trash'
+          onConfirm={onItemRemove}
+          onDropClass={classes.onDrop}
+          onConfirmText='Are you Sure you want to Delete?'
+        />
       )}
     </DashboardCard>
   );

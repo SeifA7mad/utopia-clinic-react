@@ -1,13 +1,20 @@
+import { createPortal } from 'react-dom';
+
 import classes from './SideModal.module.css';
 import Backdrop from './backdrop/Backdrop';
+
+const portalContianer = document.getElementById('modals');
 
 const SideModal = (props) => {
   return (
     <>
-    <div className={classes.sideModal}>
-      <h2> {props.heading} </h2> {props.children}
-    </div>
-    <Backdrop onClose={props.onClose}/>
+      {createPortal(<Backdrop onClose={props.onClose} />, portalContianer)}
+      {createPortal(
+        <div className={classes.sideModal}>
+          <h2> {props.heading} </h2> {props.children}
+        </div>,
+        portalContianer
+      )}
     </>
   );
 };

@@ -1,20 +1,17 @@
 import classes from './Table.module.css';
 
-const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable, dragStart }) => {
-
-  let tableBodyDataTrans = [];
-  
-  if (tableBodyData) {
-    for (let dataKey in tableBodyData) {
-      tableBodyDataTrans.push({ id: +dataKey, ...tableBodyData[dataKey] });
-    }
-  }
-
+const Table = ({
+  tableHeadData,
+  tableBodyData,
+  ignoreData,
+  dragable,
+  dragStart,
+}) => {
   let tableBody = [];
 
-  if (tableBodyDataTrans.length > 0) {
+  if (tableBodyData.length > 0) {
     let rowOfData = null;
-    tableBodyDataTrans.forEach((dataObj) => {
+    tableBodyData.forEach((dataObj) => {
       rowOfData = [];
       for (let dataKey in dataObj) {
         if (ignoreData && ignoreData.includes(dataKey)) {

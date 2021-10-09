@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { createPortal } from 'react-dom';
 
 import classes from './DetailsHead.module.css';
 
@@ -7,8 +6,6 @@ import { AuthContext } from '../../store/auth-context';
 import IconText from '../../ui/icons/IconText';
 import Notifications from '../notifications/Notifications';
 import ProfileSideModal from '../profile/ProfileSideModal';
-
-const portalContianer = document.getElementById('modals');
 
 // head component handle the activeModal state to only show one side modal profile | notification modal
 const DetailsHead = () => {
@@ -27,7 +24,9 @@ const DetailsHead = () => {
   // object that saves all the possible modal content in keys
   const modalContent = {
     profile: <ProfileSideModal onClose={toggleModalHandler} />,
-    notifications: isLoggedIn ? <Notifications onClose={toggleModalHandler} userId={userToken.id} /> : null,
+    notifications: isLoggedIn ? (
+      <Notifications onClose={toggleModalHandler} userId={userToken.id} />
+    ) : null,
   };
 
   return (
@@ -48,8 +47,7 @@ const DetailsHead = () => {
             onClick={() => toggleModalHandler('notifications')}
           />
         )}
-        {activeModal !== '' &&
-          createPortal(modalContent[activeModal], portalContianer)}
+        {activeModal !== '' && modalContent[activeModal]}
       </div>
     </div>
   );
