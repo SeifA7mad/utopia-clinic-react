@@ -13,10 +13,12 @@ const Archives = () => {
     UseTable();
 
   const onUserClickedHandler = () => {
+    //later: send http request to get the users data
     onChangeTableData(dummyUserData, 'users');
   };
 
   const onOfferClickedHandler = () => {
+    //later: send http request to get the offers data
     onChangeTableData(offersData, 'offers');
   };
 
@@ -36,6 +38,7 @@ const Archives = () => {
   };
 
   const onDragStart = (event, id) => {
+    //later: send http request to remove the data 
     event.dataTransfer.setData('id', id);
   };
 
