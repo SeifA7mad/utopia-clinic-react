@@ -1,7 +1,7 @@
 import classes from './Table.module.css';
 
-const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable }) => {
-  
+const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable, dragStart }) => {
+
   let tableBodyDataTrans = [];
   
   if (tableBodyData) {
@@ -25,7 +25,11 @@ const Table = ({ tableHeadData, tableBodyData, ignoreData, dragable }) => {
         );
       }
       tableBody.push(
-        <tr draggable={dragable} key={dataObj.id}>
+        <tr
+          draggable={dragable}
+          onDragStart={(e) => dragStart(e, dataObj.id)}
+          key={dataObj.id}
+        >
           {rowOfData}
         </tr>
       );
