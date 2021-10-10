@@ -6,7 +6,7 @@ const MainHeading = ({ headTxt, subTxt, split = false }) => {
     const splitedHeading = headTxt.split(' ');
     content = (
       <h1>
-        {splitedHeading[0]} <span> {splitedHeading[1]} </span>
+        {splitedHeading[0]}<span> {splitedHeading[1]} </span>
       </h1>
     );
   }

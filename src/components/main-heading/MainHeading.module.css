@@ -3,12 +3,12 @@
 }
 
 .mainHeading h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .mainHeading h1 span {
-  color: rgba(127, 255, 212, 0.9);
+  color: rgb(59, 183, 170);
 }
 
 .mainHeading p {

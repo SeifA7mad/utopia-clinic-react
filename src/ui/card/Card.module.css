@@ -1,13 +1,9 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: rgba(128, 128, 128, 0.8);
+  justify-content: space-between;
   border-radius: 0.5rem;
   box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-}
-
-.card * {
-    margin: 1rem auto;
 }
 
 .cardClick {

@@ -6,8 +6,9 @@ const Offers = () => {
   return (
     <>
       <MainHeading
-        headTxt='Offers'
+        headTxt='Off ers'
         subTxt='Duis nisi aliquip incididunt laboris laboris cillum nostrud cillum officia id.'
+        split={true}
       />
       <OfferList />
     </>

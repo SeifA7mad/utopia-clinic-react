@@ -1,5 +1,7 @@
+
+
 .input {
-    width: 75%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0);
     height: 1.5rem;
     border-style: none;
@@ -18,5 +20,5 @@
     font-size: 1.3rem;
     font-style: italic;
     color: black;
-    width: 30%;
+    width: 100%;
 }

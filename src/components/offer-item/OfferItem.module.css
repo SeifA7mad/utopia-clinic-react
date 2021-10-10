@@ -1,18 +1,22 @@
-.offerItem {
-  width: 23rem;
+.offerItemCard {
+  width: 25rem;
   height: fit-content;
   margin: 1rem auto;
+  background-color: rgba(128, 128, 128, 0.8);
 }
 
-.offerItem img {
+.offerItemCard * {
+  margin: 0.6rem auto;
+}
+
+.offerItemCard img {
   width: 95%;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-  opacity: .8;
+  opacity: 0.8;
 }
 
-
-.offerItem p {
+.offerItemCard p {
   width: 95%;
   text-align: justify;
   font-style: italic;
@@ -21,5 +25,11 @@
 
 .offerPrice {
   font-weight: bold;
+  font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.76);
+  margin-top: 0;
+}
+
+.offerPrice span {
+  text-decoration: line-through;
 }

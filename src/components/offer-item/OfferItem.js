@@ -3,15 +3,11 @@ import Card from '../../ui/card/Card';
 
 const OfferItem = ({ img, desc, price, onClick, id }) => {
   return (
-    <div className={classes.offerItem}>
-      <Card onClick={onClick}>
-        <img src={img} alt={`offer-img-${id}`}/>
-        <p>
-          {desc}
-          <span className={classes.offerPrice}> {`price: ${price}$`} </span>
-        </p>
+      <Card onClick={onClick} className={classes.offerItemCard}>
+        <img src={img} alt={`offer-img-${id}`} />
+        <p>{desc}</p>
+        <i className={classes.offerPrice}> Price: <span> {price + 100}$ </span> {price}$ </i>
       </Card>
-    </div>
   );
 };
 
