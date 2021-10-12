@@ -1,0 +1,22 @@
+.diagnosticsTypeCard {
+    width: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(232, 233, 233, 0.774);
+}
+
+.diagnosticsCard {
+    background-color: whitesmoke;
+    width: 13rem;
+    height: 8rem;
+    margin: auto 1rem;
+    cursor: pointer;
+} 
+
+.diagnosticsCard:hover {
+    background-color: rgba(41, 139, 139, 0.226);
+}
+
+.diagnosticsCard * {
+    margin: auto;
+}

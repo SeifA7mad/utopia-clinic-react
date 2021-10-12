@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '../../ui/form-content/button/Button';
 import Card from '../../ui/card/Card';
+import DiagnosticsTypeCards from './DiagnosticsTypeCards';
 
 import classes from './HomeContent.module.css';
 
@@ -29,9 +30,7 @@ const HomeContent = () => {
           </p>
           <Button type='link'> Reservation </Button>
         </Card>
-        <Card className={classes.card2}>
-            
-        </Card>
+        <DiagnosticsTypeCards />
       </div>
     </>
   );
