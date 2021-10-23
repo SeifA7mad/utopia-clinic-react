@@ -1,5 +1,5 @@
 # Utopia Clinic Web App
-This is a simple Web Application for clinic reservations deveoped using React.js (under development).
+This is a simple Web Application for clinic reservations developed using React.js (under development).
 
 The WebApp still with no back-end only front-end with some dummy created data to show how the WebApp works.
 
