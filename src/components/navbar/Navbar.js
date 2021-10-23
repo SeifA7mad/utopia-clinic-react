@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
       <ul className={classes.navbar}>
         <li>
-          <NavLink to='/' activeClassName={classes.active} exact> Home </NavLink>
+          <NavLink to='/home' activeClassName={classes.active} exact> Home </NavLink>
         </li>
         <li>
           <NavLink to='/offers' activeClassName={classes.active}> Offers </NavLink>
