@@ -31,11 +31,11 @@ const Footer = () => {
         </div>
         <div className={classes.bottomContent2}>
           <h1> Explore </h1>
-          <Link to='./'> Home </Link>
+          <Link to='./home'> Home </Link>
           <Link to='./offers'> Offers </Link>
           <Link to='./about'> About </Link>
           <Link to='./reservation'> Reservation </Link>
-          <Link to='./Account'> account </Link>
+          <Link to='./account'> account </Link>
         </div>
         <div className={classes.bottomContent3}>
           <h1> Recent News </h1>

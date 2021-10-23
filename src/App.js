@@ -27,10 +27,10 @@ const App = () => {
             <Dashboard />
           </Route>
         )}
-        <Route path='/' exact>
+        <Route path='/home' exact>
           <Home />
         </Route>
-        <Redirect to='/' />
+        <Redirect to='/home' />
       </Switch>
     </Layout>
   );
